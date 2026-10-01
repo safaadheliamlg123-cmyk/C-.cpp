@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build EXE
-        run: g++ sava.cpp -o sava.exe
+        run: g++ sava.cpp -o sava.exe -static -static-libgcc -static-libstdc++
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
