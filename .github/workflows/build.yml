@@ -1,22 +1,22 @@
 name: Build C++ EXE
 
-on:
+"on":
   workflow_dispatch:
   push:
+
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-      - name: Ambil kode
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Compile C++ menjadi EXE
-        run: g++ p
-        sava.cpp -o sava.exe
+      - name: Build EXE
+        run: g++ sava.cpp -o sava.exe
 
-      - name: Simpan file EXE
+      - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
-          name: program-exe
+          name: sava-exe
           path: sava.exe
